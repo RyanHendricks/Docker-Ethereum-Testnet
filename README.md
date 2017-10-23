@@ -56,3 +56,6 @@ If you want to start mining or stop mining you need to connect to the node via:
 docker exec -it ethereumdocker_eth_1 geth attach ipc://root/.ethereum/devchain/geth.ipc
 ```
 
+### Cleanup Docker (containers and images)
+`docker ps -aq | xargs docker rm -f`
+`docker images -aq | xargs docker rmi -f`
