@@ -1,7 +1,7 @@
 FROM ethereum/client-go:latest
 
 RUN apk update &&\
-    apk add git nodejs bash perl
+    apk add git nodejs-npm bash perl
 
 RUN cd /root &&\
     git clone https://github.com/cubedro/eth-net-intelligence-api &&\
