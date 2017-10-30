@@ -1,31 +1,22 @@
-# Ethereum Docker
+# Docker Ethereum Testnet
 
-* Deploy private Ethereum testnet clusters using Docker.
-* Monitor Ethereum nodes via netstats interface.
-* Easily manage running containers using Portainer.
+* Deploy a private Ethereum testnet cluster with netstats using Docker
 
-## Deploy Ethereum Cluster
+**Additional Features**
+* Manage running containers using the Portainer GUI.
+* Interact with your private blockchain using Etherwallet (account interface) and Ethersapp (contract interface)
 
-Use the following command in a terminal:
+## Getting Started
+
+### 1. Deploy Ethereum Testnet
 
 ```$ docker-compose up -d```
 
-By default this will create:
+This will build the images and start the containers for:
 
-* 1 Ethereum Bootstrapped container
-* 1 Ethereum container (which connects to the bootstrapped container on launch)
-* 1 Netstats container (with a Web UI to view activity in the cluster)
-
-To access the Netstats Web UI:
-
-```open http://localhost:3000```
-
-### Scaling the number of nodes/containers in the cluster
-
-```docker-compose scale eth=#```
-
-This will scale the testnet to # nodes. These nodes will connect to the P2P network (via the bootstrap node)
-by default.
+* 1 Ethereum Bootstrapped container (acts as a primary node for the other nodes to connect)
+* 1 Ethereum "Slave" container (which connects to the bootstrapped container on launch)
+* 1 Netstats container (with a Web UI to view activity in the cluster) To access the Netstats Web UI: `open http://localhost:3000`
 
 ### Test accounts
 
