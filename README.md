@@ -17,11 +17,15 @@ This will build the images and start the containers for:
 * 1 Ethereum Bootstrapped container (acts as a primary node for the other nodes to connect)
 * 1 Ethereum "Slave" container (which connects to the bootstrapped container on launch)
 * 1 Netstats container (with a Web UI to view activity in the cluster) To access the Netstats Web UI: `open http://localhost:3000`
+* 1 Addons container which gives you access to Ethersapp and MyEtherWallet. These are accessible via localhost:80/ethersapp and localhost:80/etherwallet
+
+Note: you can remove the addons container by removing the last entry in the docker-compose.yml file.
 
 ### Test accounts
 
 There are 3 pre-funded accounts included.
 Private keys can be found in ./files/keystore
+Connect myetherwallet to the private testnet and obtain the private key for use in metamask if desired
 
 ----
 ## Managing Cluster
