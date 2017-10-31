@@ -1,0 +1,434 @@
+body {
+  font-family: sans-serif;
+  background-color: #eee;
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+}
+
+.wrap {
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.alert {
+  color: red;
+  display: none;
+}
+
+a.tooltip {
+  display:none; 
+  outline:none; 
+  text-decoration:none;
+  background: orange;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 16px;
+}
+
+a.tooltip:hover {text-decoration:none;} 
+a.tooltip span {
+  z-index:10;display:none; padding:14px 20px;
+  margin-top:-30px; margin-left:28px;
+  width:300px; line-height:16px;
+}
+
+a.tooltip:hover span{
+  display:inline; position:absolute; color:#111;
+  border:1px solid #DCA; background:#fffAF0;
+}
+
+.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}
+   
+a.tooltip span
+{
+  border-radius:4px;
+  box-shadow: 5px 5px 8px #CCC;
+}
+ 
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  background: #005580;
+  padding: 5px;
+  color: white;
+}
+
+a.btn {
+  text-decoration: none;
+  font-size: 12px;
+}
+  
+.btn:hover {
+  background: black;
+  color: orange;
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  background: gray;
+} 
+
+#btnSearch {
+  margin-top: 22px;
+  margin-left: 10px;
+  width: 50px;
+  text-align: center;
+}
+
+.walletInput {
+  width: 100%;
+}
+
+
+.processing {
+  display: inline-block;
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    width: 0%; 
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#progressBar {
+  display: inline-block;
+  background-color: #2d3551;
+  height: 3px;
+  width: 95%;
+  margin-top: 0px;
+}
+
+.banner {
+  background-color: #2d3551;
+  color: #fff;
+  height: 45px;
+  font-size: 35px;
+  top: 0px;
+  width: 100%;
+}
+
+.paneSearch {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.content {
+  width: 800px; 
+  margin: auto;
+}
+
+h1, h2, h3 {
+  color: #336;
+  font-weight: normal;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.paramType {
+  display: inline-block;
+  height: 20px;
+  min-width: 50px;
+  padding: 4px 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+input {
+ border: 2px solid #dadada;
+ border-radius: 7px;
+}
+
+input:focus { 
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display:none;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}
+   
+.modalDialog input {
+  height: 20px;
+  padding: 4px 6px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  line-height: 20px;
+  white-space: nowrap;
+  border-radius: 7px;
+  min-width: 300px;
+  width: auto;
+  margin-right: 0;
+}
+
+table {
+  border: 1px solid #eee;
+}
+
+.param {
+  margin-bottom: 5px; 
+}
+
+.txInput {
+  height: 45px;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 1px; 
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 0 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#btnCall {
+  height: 40px;
+  line-height: 35px;
+  font-size: 15px;
+  padding: 0 20px;
+}
+
+textarea {
+   resize: vertical;
+}
+ 
+#nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+
+li a {
+  display:block;
+  line-height: 1.5;
+  padding: 5px;
+  width: 160px;
+  background: #fafafa;
+  border: solid 1px #eee;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+a 
+{
+  color: #005580;
+}
+
+#nav a:hover, .active {
+  color: white;
+  background: #005580;
+}
+
+.cssContractAddress {
+  float: left;
+  width: 70%; 
+  height: 40px; 
+  padding: 0px 10px;
+  font-size:14px;
+  border: 2px solid #dadada;
+  margin: 13px 3px 0px 5px;
+  border-radius: 7px;
+}
+
+#functionDetail {
+  width: 70%;
+  float: left;
+  display: inline;
+  margin-left: 5px; 
+  border: 1px solid #eee;
+  background: #fafafa;
+  display: none;
+  padding: 5px;
+  font-size: 14px; 
+}
+
+#nav {
+  width: 180px;
+  float: left;
+  display: inline;
+}
+
+#filter {
+  height: 30px;
+  width: 163px;
+  display: none;
+  padding: 5px;
+  font-size:14px;
+}
+   
+#error {
+  color: red;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.testnet {
+  background-color: orange;
+}
+.mainnet {
+  background-color: blue;
+}
+.title {
+  display: inline;
+}
+.networkPane {
+  float: right;
+}
+
+#contractDropdown {
+   display: inline;
+}
+  
+#contractPane {
+   display: none;
+}
+
+.cssSmallSpacer {
+   height: 20px;
+}
+.cssTinySpacer {
+   height: 5px;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.col-40-pct {
+  width: 40%;
+}
+ 
+.col-60-pct {
+  width: 60%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+#progressModal {
+  text-align: center;
+}
+
+.progress {
+  display: block-inline;
+}
+
+.bar {
+  display: block-inline;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+.fill {
+  background-color: blue;
+  border-radius: 6px;
+  height: 20px;
+  width: 0%;
+}
+
+.pctText {
+  display: block-inline;
+}
+
+.invalid-input {
+  border-color: red;
+}
+
+.btnGroup .btn {
+  height: 35px; 
+  line-height: 35px; 
+  padding: 0px 10px;
+  font-size:12px;
+}
+
+.btnGroup {
+  padding: 16px;
+}
+
+.input-abi {
+  height: 100px; 
+  width: 100%;
+  resize: vertical; 
+}
+
+.input-group input {
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 10px;
+}

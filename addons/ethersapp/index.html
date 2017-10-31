@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"/>
+   <title>EthersApp</title>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="banner">
+        <div class="content"> 
+           <div class="title">Ethereum's App Explorer
+             <span><a href="https://github.com/yuetloo/ethersapp" target="_blank">(github)</a></span>
+           </div>
+           <span class="networkPane">
+              <select id="networkid" class="testnet">
+                 <option value="testnet" selected="true">Testnet</option>
+                 <option value="mainnet">Mainnet</option>
+              </select>
+           </span>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="SearchPane">
+            <h2 class="pull-left">Contract:</h2>
+            <div class='contractGroup'>
+            <select id="contractDropdown" 
+                class="cssContractAddress" >
+            </select>
+            <div class='btnGroup'>
+              <a class='btn hidden' id='btnAddAbi'>Add</a>
+              <a class='btn hidden' id='btnDelAbi'>Delete</a>
+            </div>
+            </div>
+           
+            <div id="progressBar"></div>
+       </div>
+
+       <div id='modalAddAbi' class='modalDialog'>
+       <div id='formAddAbi'>
+          <div class='input-group'>
+            <div>Contract Address:
+              <span id='alertAddress' class='error'></span>
+            </div>
+            <input id='newContractAddress'></input>
+          </div>
+          <div class='input-group'>
+            <div>Contract Name:
+              <span id='alertName' class='error'></span>
+            </div>
+            <input id='newContractName'></input>
+          </div>
+          <div class='input-group'>
+            <div>Abi:
+              <span id='alertAbi' class='error'></span>
+            </div>
+            <textarea id='newContractAbi' class='input-abi'></textarea>
+          </div> 
+          <div class="cssSmallSpacer"></div>
+          <div class="display-inline col-40-pct pull-left">
+            <div id='btnSaveAbi' class="btn">Save</div>
+            <div id='btnCancelAddAbi' class="btn">Cancel</div>
+          </div>
+          <div class="display-inline col-60-pct pull-right">
+            <div id='addAbiAlert' class="alert wrap display-inline"></div>
+          </div>
+          <div class='clear-both'></div>
+       </div>
+       </div>
+
+       <div class="searchResult">
+       <div class="container">
+          <div id="contractPane">
+             <h2>Contract: <span id="contractName"></span>
+                           <span id="contractSource"></span>
+             </h2>
+          </div>
+          <h2 class="contract error hidden">Contract Not Found!</h2>
+       </div>
+       <div class="container">
+          <div id="nav">
+              <div>
+                  <input id="filter" placeholder="Search function"/>
+              </div>
+              <div id="functions"></div>
+          </div>
+          <div id="functionDetail">
+              <h2>Function: <span id="functionName"></span>
+              <a href="#" class="tooltip">
+                C 
+                <span><small>
+                  Constant function - gas is not required to call the function
+                </small></span>
+              </a>
+              </h2>
+              <div id="content"/>
+          </div>
+          <div id="openModal" class="modalDialog">
+             <div>
+                <div class="cssSmallSpacer"></div>
+                <input type="password" id="password" class="full-width" 
+                       placeholder="Password to decrypt wallet"></input>
+                <div class="cssTinySpacer"></div>
+                <input class="inputFile" type="file" id="importFile" class="full-width"/>
+                <div class="cssSmallSpacer"></div>
+                <div class="section">
+                  <div class="display-inline col-40-pct pull-left">
+                    <a id="closeModal" class="btn">Cancel</a>
+                    <a id="importWallet" class="btn">Import Wallet</a>
+                  </div>
+                  <div class="display-inline col-60-pct pull-right">
+                    <div class="alert wrap display-inline"></div>
+                  </div>
+                  <div class="clear-both"></div>
+                </div>
+             </div>
+          </div>
+          <div id="progressModal" class="modalDialog">
+             <div class="progress">
+                 <h2>Importing wallet...</h2>
+                 <div class="bar"><div class="fill"></div></div>
+                 <span class='pctText'>0</span>%
+                 <div class='cssSmallSpacer'></div>
+             </div>
+          </div>
+       </div>
+    </div>
+
+   <script src="js/jquery-2.2.3.min.js"></script>
+   <script src="js/buffer.js"></script>
+   <script src="js/web3.min.js"></script>
+   <script src="js/web3-coder.js"></script>
+   <script src="js/httpclient.js"></script>
+   <script src="js/wallet.js"></script>
+   <script src="js/ethereumjs-tx.js"></script>
+   <script src="js/abi.js"></script>
+   <script src="js/aes.js"></script>
+   <script src="js/scryptsy.js"></script>
+   <script src="js/app.js"></script>
+</body>
+</html>
