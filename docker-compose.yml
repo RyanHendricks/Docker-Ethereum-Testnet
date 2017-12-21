@@ -3,6 +3,7 @@ services:
   bootstrap:
     build: monitored-geth-client
     restart: on-failure
+    restart: always
     container_name: bootstrap
     hostname: bootstrap
     links:
@@ -21,6 +22,7 @@ services:
   ethminer:
     build: monitored-geth-client
     restart: on-failure
+    restart: always
     links:
       - bootstrap
       - netstats

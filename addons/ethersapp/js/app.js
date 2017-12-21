@@ -9,6 +9,7 @@ var httpClient;
 var wallet;
 var global_abi;
 var worker;
+var providers;
 
 var txData = [
          {
@@ -66,6 +67,7 @@ $(document).ready(function(){
   wallet = new Wallet();
   var networkId = $("#networkid").val();
   httpClient = new HttpClient(networkId);
+  providers = new 
   loadAbiList(networkId);
   loadAbiFromStore(networkId);
   loadContracts();
@@ -96,17 +98,21 @@ $('#networkid').on('change', function(){
 
 function getGasPrice() 
 {
-  httpClient.getGasPrice( function(gasPrice) {
-      updateTxData('gasPrice', gasPrice);
-      $("#gasPrice").val(gasPrice);
-    },
-    function( msg, error ) {
-       errorHandler(msg, error);
-    });
+  var gasPrice = 4;
+  updateTxData('gasPrice', gasPrice);
+  $("#gasPrice").val(gasPrice);
 
   httpClient.getGasLimit( function(limit) {
     updateTxData('gasLimit', limit);
   });
+}
+
+function getNetwork() {
+   var networkId = $("#networkid").val();
+   if( networkId === 'mainnet' ) 
+     return false;
+   else
+     return true;  // testnet
 }
  
 function getNonce(callback) 
@@ -117,8 +123,10 @@ function getNonce(callback)
     return;
   }
      
-  httpClient.getNonce(
-    accountAddress, 
+  var network = getNetwork(); 
+  var provider = new ethers.providers.getDefaultProvider(network)
+
+  provider.getTransactionCount(accountAddress).then(
     function( nonce ) {
       $("#nonce").val(nonce);
       updateTxData('nonce', nonce);
@@ -189,6 +197,7 @@ function callFunction() {
   }
   try {
     var functionData = encodeFunctionData(name, types, args);
+    console.log(functionData);
   } catch (err) {
     errorHandler('Invalid input: ', err);
     return;

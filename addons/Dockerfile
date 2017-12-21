@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM httpd:latest
 COPY ./ethersapp /usr/local/apache2/htdocs/ethersapp
 COPY ./etherwallet /usr/local/apache2/htdocs/etherwallet
 

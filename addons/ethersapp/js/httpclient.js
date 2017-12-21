@@ -122,7 +122,9 @@ HttpClient.prototype.sendRawTransaction = function(rawTx, callback, errHandler) 
  */
 HttpClient.prototype.getGasPrice = function( callback, errHandler ) {
   var gasPrice =     20000000000;
+  callback(gasPrice);
   
+/*
   var url = "https://etherchain.org/api/gasPrice";
   HttpClient.httpRequest({
     method: "GET",
@@ -142,6 +144,7 @@ HttpClient.prototype.getGasPrice = function( callback, errHandler ) {
       errHandler('Unable get gas price', error);
     }
   });
+*/
 
 }
  
