@@ -2,6 +2,8 @@ FROM ethereum/client-go:stable
 
 RUN apk add --update git bash nodejs nodejs-npm perl
 
+RUN npm i -g npm@latest
+
 RUN cd /root &&\
     git clone https://github.com/EthereumEx/eth-net-intelligence-api &&\
     cd eth-net-intelligence-api &&\
