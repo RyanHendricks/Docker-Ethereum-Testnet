@@ -3,12 +3,13 @@
 * Deploy a private Ethereum testnet cluster with netstats using Docker
 
 **Additional Features**
+* Scaleable number of running nodes in the network
 * Manage running containers using the Portainer GUI.
 * Interact with your private blockchain using Etherwallet (account interface) and Ethersapp (contract interface)
 
 ## Deploy the Ethereum Testnet
 
-```javascript
+```bash
 docker-compose up -d
 ```
 

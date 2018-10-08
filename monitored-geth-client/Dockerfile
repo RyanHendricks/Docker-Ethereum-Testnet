@@ -3,7 +3,7 @@ FROM ethereum/client-go:stable
 RUN apk add --update git bash nodejs nodejs-npm perl
 
 RUN cd /root &&\
-    git clone https://github.com/cubedro/eth-net-intelligence-api &&\
+    git clone https://github.com/EthereumEx/eth-net-intelligence-api &&\
     cd eth-net-intelligence-api &&\
     npm install &&\
     npm install -g pm2
