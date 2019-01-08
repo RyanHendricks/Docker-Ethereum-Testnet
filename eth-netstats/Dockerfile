@@ -1,6 +1,6 @@
-FROM node:boron
+FROM node:alpine
 
-RUN apt install git
+RUN apk add --update git
 
 RUN git clone https://github.com/cubedro/eth-netstats
 
