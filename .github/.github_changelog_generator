@@ -1,0 +1,5 @@
+author=false
+issues=true
+exclude-labels=duplicate,question,invalid,wontfix,release
+bugs-label=**Fixed Bugs:**
+enhancement-label=**Updates:**
